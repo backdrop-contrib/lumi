@@ -1,0 +1,258 @@
+/**
+ * Lumi custom styles.
+ */
+
+/*** Variables ***/
+:root {
+  /* Colour from theme settings (these values are updated via JS and are defined
+     here in case JS is disabled) */
+  --color: hsl(309, 33%, 41%);
+  --color-alt: hsl(309, 33%, 33%);
+  --color-highlight: hsl(309, 33%, 94%);
+  --color-highlight-alt: hsl(309, 33%, 88%);
+  --color-text: #fff;
+
+  --background: #fff;
+  --background-alt: #f2f2f2;
+  --invert: #000;
+  --text: #444;
+  --heading: #333;
+  --border: #ccc;
+  --tab: #ddd;
+  --tab-hover: #ccc;
+  --tab-active: #666;
+  --table-header: #e8e8e8;
+}
+
+/*** Body ***/
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+/*** Miscellaneous ***/
+a,
+.link,
+a.node-preview-backlink,
+.installer-browser-sort-list li a,
+.views-ui-display-tab-actions .dropbutton-wrapper input.form-submit {
+  color: var(--color);
+}
+.views-displays .secondary li.add a,
+.views-displays .secondary .action-list input.form-submit {
+  /* Not sure why this needs !important to work... */
+  color: var(--color) !important;
+}
+
+.breadcrumb {
+  overflow: hidden;
+  padding-bottom: 3px;
+}
+
+.contextual-links li a:hover {
+  background-color: var(--color-highlight);
+}
+
+:focus {
+  outline-color: var(--color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading);
+  line-height: 1.5em;
+}
+h1 {
+  font-size: 2em;
+  line-height: 1.4em;
+}
+h2 {
+  font-size: 1.75em;
+  line-height: 1.4em;
+}
+h3 {
+  font-size: 1.35em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h5 {
+  font-size: 1.1em;
+}
+h6 {
+  font-size: 1em;
+}
+
+.layout-editor-placeholder {
+  background: var(--color-highlight-alt);
+}
+
+::selection {
+  background: var(--color-highlight-alt);
+}
+::-moz-selection {
+  background: var(--color-highlight-alt);
+}
+
+/*** Header ***/
+.l-header:before {
+  background: var(--background-alt);
+}
+
+.page-title {
+  color: var(--heading);
+}
+
+/*** Dashboard ***/
+.admin-panel {
+  background: var(--background);
+  border-color: var(--border);
+}
+.admin-panel .block-title,
+.admin-panel h3 {
+  font-size: 1em;
+}
+
+/*** Forms ***/
+input.form-text:focus,
+input.form-tel:focus,
+input.form-date:focus,
+input.form-time:focus,
+input.form-email:focus,
+input.form-url:focus,
+input.form-color:focus,
+input.form-number:focus,
+input.form-search:focus,
+input.form-file:focus,
+textarea.form-textarea:focus,
+select.form-select:focus {
+  border-color: var(--color);
+}
+
+a.button:hover,
+input.form-submit:hover,
+a.button:focus,
+input.form-submit:focus {
+  background-color: var(--tab-hover);
+  border-color: var(--tab-hover);
+}
+
+input.button-primary,
+button.button-primary {
+  background-color: var(--color);
+  border-color: var(--color);
+  color: var(--color-text);
+}
+a.button-primary:hover,
+a.button-primary:focus,
+input.button-primary:hover,
+input.button-primary:focus,
+button.button-primary:hover,
+button.button-primary:focus {
+  background-color: var(--color-alt);
+  border-color: var(--color-alt);
+}
+a.button-secondary:hover,
+a.button-secondary:focus,
+input.button-secondary:hover,
+input.button-secondary:focus,
+button.button-secondary:hover,
+button.button-secondary:focus {
+  box-shadow: inset 0px 0px 0px 2px var(--tab-hover);
+  color: var(--text);
+}
+
+a.button-danger,
+input.button-danger,
+button.button-danger {
+  background-color: transparent;
+  color: #e7251b;
+}
+a.button-danger:hover,
+a.button-danger:focus,
+input.button-danger:hover,
+input.button-danger:focus,
+button.button-danger:hover,
+button.button-danger:focus {
+  background-color: #e7251b;
+}
+
+.vertical-tab-selected .vertical-tab-link {
+  border-left-color: var(--color);
+}
+.vertical-tab-link strong,
+.vertical-tab-link .fieldset-legend {
+  color: var(--color);
+}
+
+.preview-button.form-submit {
+  background: var(--color);
+}
+.node-preview-save-button.form-submit {
+  border-color: var(--color);
+}
+
+/*** Tables ***/
+th {
+  background: var(--table-header);
+}
+tr:hover,
+tr:hover td.active,
+tr.odd:hover td.active {
+  background: var(--color-highlight);
+}
+tr.drag,
+tr.drag-previous {
+  background: var(--color-highlight-alt);
+}
+tr.selected td.active,
+tr.selected td {
+  background: var(--color-highlight-alt);
+  border-color: var(--color-highlight-alt);
+}
+
+/*** Tabs ***/
+ul.primary li {
+  border-color: var(--background-alt);
+}
+ul.primary li a,
+ul.primary li a.active,
+ul.primary li a:active,
+ul.primary li a:visited,
+.expand-dropdown-tabs-control,
+.responsive-tabs-mobile .expand-dropdown-tabs-control:before {
+  background-color: var(--tab);
+  color: var(--invert);
+}
+ul.primary li a:hover,
+.expand-dropdown-tabs-control:hover,
+.responsive-tabs-mobile .expand-dropdown-tabs-control:hover:before,
+.responsive-tabs-mobile .expand-dropdown-tabs-control.js-active:before,
+.expand-dropdown-tabs-control.js-active {
+  background-color: var(--tab-hover);
+}
+ul.primary li.active a,
+ul.primary li.active a.active,
+ul.primary li.active a:active,
+ul.primary li.active a:visited,
+.responsive-tabs-mobile .expand-dropdown-tabs-label {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+ul.secondary {
+  background-color: var(--background);
+}
+ul.secondary li a {
+  background-color: var(--tab);
+  color: var(--invert);
+}
+ul.secondary li a:hover {
+  background-color: var(--tab-hover);
+  color: var(--invert);
+}
+ul.secondary li.active a,
+ul.secondary li.active a:hover,
+ul.secondary li.active a.active {
+  background-color: var(--tab-active);
+}

@@ -1,0 +1,11 @@
+name = Lumi
+description = The perfect admin theme for cold, wintery days.
+type = theme
+backdrop = 1.x
+base theme = seven
+
+stylesheets[all][] = fonts/poppins/poppins.css
+stylesheets[all][] = css/lumi.css
+scripts[] = js/lumi.js
+
+settings[color] = purple
