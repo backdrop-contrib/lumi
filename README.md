@@ -1,8 +1,7 @@
 Lumi
 ====
 
-A customisable admin theme that lets you select from various colour schemes.
-Perfect for cold, wintery days.
+Lumi (pronounced 'Loo-me') is a modern, customisable admin theme for Backdrop.
 
 Installation
 ------------
@@ -11,7 +10,7 @@ Installation
   https://backdropcms.org/guide/themes.
 
 - Visit the settings page under Administration > Appearance > Lumi Settings
-  (admin/appearance/settings/lumi) to choose a colour scheme.
+  (admin/appearance/settings/lumi) to customise the theme.
 
 Issues
 ------
@@ -28,8 +27,8 @@ Credits
 -------
 
 - Created for Backdrop CMS by [Peter Anderson](https://github.com/BWPanda).
-- Based on the [Hielo](https://templated.co/items/demos/hielo/index.html)
-  website template by [TEMPLATED](https://templated.co/).
+- Design and colours inspired by the 'Flatly' and 'Darkly'
+  [Bootswatch](https://bootswatch.com/) themes.
 
 License
 -------

@@ -8,39 +8,40 @@
     attach: function(context, settings) {
 
       var style = document.documentElement.style;
-      var hsl = Backdrop.settings.lumi.colors.hsl;
-      var text = Backdrop.settings.lumi.colors.text;
-      var hslStart = 'hsl(' + hsl[0] + ', ' + hsl[1] + '%, ';
-      var hslEnd = '%)';
+      var primary = Backdrop.settings.lumi.primary.hsl;
+      var primaryText = Backdrop.settings.lumi.primary.text;
+      var links = Backdrop.settings.lumi.links.hsl;
+      var linksText = Backdrop.settings.lumi.links.text;
 
       // Set CSS variables.
-      style.setProperty('--color', hslStart + hsl[2] + hslEnd);
-      style.setProperty('--color-alt', hslStart + lightness(hsl[2], -0.25) + hslEnd);
-      style.setProperty('--color-highlight', hslStart + lightness(hsl[2], 0.9) + hslEnd);
-      style.setProperty('--color-highlight-alt', hslStart + lightness(hsl[2], 0.8) + hslEnd);
-      style.setProperty('--color-text', text);
+      style.setProperty('--primary', 'hsl(' + primary[0] + ', ' + primary[1] + '%, ' + primary[2] + '%)');
+      style.setProperty('--primary-alt', 'hsl(' + primary[0] + ', ' + primary[1] + '%, ' + lighten(primary[2], -0.3) + '%)');
+      style.setProperty('--primary-text', primaryText);
+      style.setProperty('--links', 'hsl(' + links[0] + ', ' + links[1] + '%, ' + links[2] + '%)');
+      style.setProperty('--links-alt', 'hsl(' + links[0] + ', ' + links[1] + '%, ' + lighten(links[2], -0.3) + '%)');
+      style.setProperty('--links-text', linksText);
 
     }
   };
 })(jQuery);
 
 /**
- * Change the lightness of a color by a percentage.
+ * Lighten (or darken) a color by a given percentage.
  *
- * 'l' is the lightness value from an HSL color (as a 0-100 integer), while
+ * 'color' is the lightness value from an HSL color (as a 0-100 integer), while
  * 'amount' is a decimal between -1 and 1 that represents the percentage to
  * change the lightness by (<0 = darken, >0 = lighten).
  */
-function lightness(l, amount) {
+function lighten(color, amount) {
   if (amount < 0) {
     // Darken.
     amount = Math.abs(amount);
-    l = l - (l * amount);
+    newColor = color - (color * amount);
   }
   else {
     // Lighten.
-    l = l + ((100 - l) * amount);
+    newColor = color + ((100 - color) * amount);
   }
 
-  return Math.round(l);
+  return Math.round(newColor);
 }

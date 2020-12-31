@@ -4,15 +4,29 @@
  * Lumi theme settings.
  */
 
-$form['color'] = array(
-  '#type' => 'radios',
-  '#title' => t('Color scheme'),
-  '#options' => array(
-    'purple' => t('Purple'),
-    'blue' => t('Blue'),
-    'green' => t('Green'),
-    'red' => t('Red'),
-    'yellow' => t('Yellow'),
-  ),
-  '#default_value' => theme_get_setting('color', 'lumi'),
+$colors = array(
+  'blue' => t('Blue'),
+  'indigo' => t('Indigo'),
+  'purple' => t('Purple'),
+  'pink' => t('Pink'),
+  'red' => t('Red'),
+  'orange' => t('Orange'),
+  'yellow' => t('Yellow'),
+  'green' => t('Green'),
+  'teal' => t('Teal'),
+  'cyan' => t('Cyan'),
+);
+
+$form['primary'] = array(
+  '#type' => 'select',
+  '#title' => t('Primary color'),
+  '#description' => t('The primary color is used for elements such as the site header and form buttons.'),
+  '#options' => $colors,
+  '#default_value' => theme_get_setting('primary', 'lumi'),
+);
+$form['links'] = array(
+  '#type' => 'select',
+  '#title' => t('Link color'),
+  '#options' => $colors,
+  '#default_value' => theme_get_setting('links', 'lumi'),
 );
