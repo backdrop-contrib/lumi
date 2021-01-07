@@ -1,7 +1,9 @@
 Lumi
 ====
 
-Lumi (pronounced 'Loo-me') is a modern, customisable admin theme for Backdrop.
+Lumi (pronounced 'Loo-me') is a modern, customisable admin theme for Backdrop, now with dark mode!
+
+![Lumi screenshot, showing light and dark modes](screenshot.png)
 
 Installation
 ------------
