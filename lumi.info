@@ -7,5 +7,6 @@ base theme = seven
 stylesheets[all][] = css/lumi.css
 scripts[] = js/lumi.js
 
+settings[dark] = false
 settings[primary] = blue
 settings[links] = green

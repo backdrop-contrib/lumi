@@ -9,6 +9,7 @@
  */
 function lumi_preprocess_page(&$variables) {
   // Get theme settings.
+  $settings['dark'] = theme_get_setting('dark', 'lumi');
   $settings['primary'] = lumi_get_color(theme_get_setting('primary', 'lumi'));
   $settings['links'] = lumi_get_color(theme_get_setting('links', 'lumi'));
 
@@ -95,13 +96,15 @@ function lumi_tablesort_indicator($variables) {
  */
 function lumi_preprocess_table(&$variables) {
   // Add header classes for sorting.
-  $ts = tablesort_init($variables['header']);
-  foreach ($variables['header'] as $delta => $value) {
-    if (is_array($value) && isset($value['field'])) {
-      $variables['header'][$delta]['class'][] = 'sortable';
+  if (!empty($variables['header'])) {
+    $ts = tablesort_init($variables['header']);
+    foreach ($variables['header'] as $delta => $value) {
+      if (is_array($value) && isset($value['field'])) {
+        $variables['header'][$delta]['class'][] = 'sortable';
 
-      if ($value['data'] == $ts['name']) {
-        $variables['header'][$delta]['class'][] = 'sort-' . $ts['sort'];
+        if ($value['data'] == $ts['name']) {
+          $variables['header'][$delta]['class'][] = 'sort-' . $ts['sort'];
+        }
       }
     }
   }

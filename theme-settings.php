@@ -17,6 +17,11 @@ $colors = array(
   'cyan' => t('Cyan'),
 );
 
+$form['dark'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Dark mode'),
+  '#default_value' => theme_get_setting('dark', 'lumi'),
+);
 $form['primary'] = array(
   '#type' => 'select',
   '#title' => t('Primary color'),
