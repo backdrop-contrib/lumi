@@ -17,6 +17,35 @@ function lumi_preprocess_page(&$variables) {
   backdrop_add_js(array(
     'lumi' => $settings,
   ), 'setting');
+
+  $data = array(
+    '#tag' => 'link',
+    '#value' => '',
+    '#attributes' => array(
+      'href' => url('https://fonts.gstatic.com'),
+      'rel' => 'preconnect',
+      'crossorigin' => 'anonymous',
+    ),
+  );
+  backdrop_add_html_head($data, 'lumi_gstatic');
+  $data = array(
+    '#tag' => 'link',
+    '#value' => '',
+    '#attributes' => array(
+      'href' => url('https://fonts.googleapis.com'),
+      'rel' => 'preconnect',
+    ),
+  );
+  backdrop_add_html_head($data, 'lumi_googlefont_preconnect');
+  $data = array(
+    '#tag' => 'link',
+    '#value' => '',
+    '#attributes' => array(
+      'href' => url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap'),
+      'rel' => 'stylesheet',
+    ),
+  );
+  backdrop_add_html_head($data, 'lumi_googlefont');
 }
 
 /**
