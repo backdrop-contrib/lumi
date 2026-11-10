@@ -147,6 +147,9 @@ function lumi_textfield($variables) {
     $attributes['type'] = 'hidden';
     $attributes['id'] = $element['#autocomplete_input']['#id'];
     $attributes['value'] = $element['#autocomplete_input']['#url_value'];
+	if (!empty($element['#autocomplete_input']['#token'])) {
+      $attributes['data-autocomplete-token'] = $element['#autocomplete_input']['#token'];
+    }
     $attributes['disabled'] = 'disabled';
     $attributes['class'][] = 'autocomplete';
     $extra = '<span class="autocomplete-icon"></span><input' . backdrop_attributes($attributes) . ' />';
